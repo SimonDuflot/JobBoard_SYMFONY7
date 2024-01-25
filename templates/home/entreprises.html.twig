@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Liste des entreprises
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row mb-4">
+			<div class="jumbotron">
+				<div class="container text-center mt-5">
+					<h1 class="">Liste des entreprises</h1>
+					<p class="lead">
+						Recherchez une entreprise qui vous correspond.
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+    <div class="col-12">
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+				{% for entreprise in entreprises %}
+					{% include "partials/_entreprise_card.html.twig" %}
+				{% endfor %}
+			</div>
+			
+		</div>
+		{# <div class="col-md-6 mx-auto">
+				{% include "partials/_pagination.html.twig" %}
+			</div> #}
+
+{% endblock %}
